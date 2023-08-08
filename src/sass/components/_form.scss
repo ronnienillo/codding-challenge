@@ -1,0 +1,18 @@
+form {
+
+    input[type=text],
+    input[type=email],
+    input[type=number],
+    input[type=password] {
+        padding: 1rem 1.5rem;
+        font-size: 1.4rem;
+        background-color: var(--theme-base-shaded);
+    }
+
+    button[type=submit] {
+        background-color: transparent;
+        border: 0;
+        outline: transparent;
+        cursor: pointer;
+    }
+}

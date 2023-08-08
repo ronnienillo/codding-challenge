@@ -1,0 +1,21 @@
+.layout-section {
+    position: relative;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+
+    &--shaded-bg {
+        background-color: var(--theme-base-shaded);
+    }
+
+    &--invert {
+        background-color: var(--theme-base-invert);
+        color: var(--text-color-lighter);
+    }
+
+    &--has-bg-img {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        overflow-y: hidden;
+    }
+}

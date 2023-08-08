@@ -1,0 +1,35 @@
+.newsletter {
+    width: 284px;
+
+    @media (min-width: $large) {
+        width: 354px;
+    }
+
+    form {
+        display: flex;
+        
+        input[type=email],input[type=text] {
+            height: 35px;
+            border: none;
+            outline: transparent;
+            width: 100%;
+        }
+
+        button[type=submit] {
+            padding: 1rem;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--theme-base);
+
+            .icon {
+                rotate: -90deg;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+    }
+}
