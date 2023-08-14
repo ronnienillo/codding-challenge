@@ -125,7 +125,7 @@ function updateCartInfo() {
   }
 
   if (totalQuantity === 0) {
-    cartContainer.innerHTML = '<p class="empty">Your cart is empty.</p>';
+    cartContainer.innerHTML = '<p class="empty mb-0">Your cart is empty.</p>';
   }
 }
 
