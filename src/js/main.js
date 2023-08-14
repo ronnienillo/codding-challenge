@@ -61,10 +61,24 @@ const itemQuantities = {}; // Object to store item quantities
 
 // Function to handle adding an item to the cart
 function addToCart(item) {
-  // Create a new cart item element
-  const cartItem = document.createElement('div');
-  cartItem.classList.add('cart-item');
-  cartItem.innerHTML = `
+  // Check if the item is already in the cart
+  const existingCartItem = cartContainer.querySelector(`[data-item-id="${item.id}"]`);
+
+  if (existingCartItem) {
+    // Item already exists in the cart, increase its quantity
+    const quantityElement = existingCartItem.querySelector('.cart-item-qty');
+    const currentQuantity = parseInt(quantityElement.textContent);
+    const newQuantity = currentQuantity + 1;
+    quantityElement.textContent = newQuantity;
+    
+    // Update itemQuantities object
+    itemQuantities[item.id] = newQuantity;
+  } else {
+    // Create a new cart item element
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+    cartItem.setAttribute('data-item-id', item.id); // Add a data attribute for identification
+    cartItem.innerHTML = `
     <div class="row">
       <div class="col-5">
           <img src="${item.thumbnail}" alt="${item.thumbnail}" />
@@ -79,14 +93,18 @@ function addToCart(item) {
           <p class="mb-0">Size: <span class="uppercase">${item.size}</span></p>
           <p class="mb-0">Color: <span class="capitalize">${item.color}</span></p>
           <p class="mb-2">Qty: <span class="capitalize cart-item-qty">${itemQuantities[item.id] || 1}</span></p>
-          <p class="mb-0 black"><strong>$${item.price} <span>lel</span></strong></p>
+          <p class="mb-0 black"><strong>$${item.price}</strong></p>
       </div>
     </div>
     <div class="separator mt-4 mb-4"></div>
   `;
 
   // Append the cart item to the cart container
-  cartContainer.appendChild(cartItem);
+    cartContainer.appendChild(cartItem);
+
+    // Update itemQuantities object
+    itemQuantities[item.id] = 1;
+  }
 
   // Update total quantity and total price
   totalQuantity++;
