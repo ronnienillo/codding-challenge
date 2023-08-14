@@ -4386,17 +4386,32 @@ form button[type=submit] {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  margin-top: -30px;
   cursor: pointer;
   color: #666;
   opacity: 1;
   line-height: 1;
   transition: opacity 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67), color 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
+@media (min-width: 767px) {
+  .glider-prev, .glider-next {
+    margin-top: -20px;
+  }
+}
+@media (min-width: 1300px) {
+  .glider-prev, .glider-next {
+    margin-top: -30px;
+  }
+}
 .glider-prev .icon, .glider-next .icon {
-  width: 37px;
-  height: 37px;
+  width: 30px;
+  height: 30px;
   color: var(--theme-base);
+}
+@media (min-width: 767px) {
+  .glider-prev .icon, .glider-next .icon {
+    width: 37px;
+    height: 37px;
+  }
 }
 
 .glider-prev:hover,

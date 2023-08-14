@@ -59,7 +59,7 @@
   border: 0;
   top: 50%;
   transform: translateY(-50%);
-  margin-top: -30px;
+
   cursor: pointer;
   color: #666;
   opacity: 1;
@@ -67,10 +67,23 @@
   transition: opacity .5s cubic-bezier(.17,.67,.83,.67),
               color .5s cubic-bezier(.17,.67,.83,.67);
 
+  @media (min-width: $medium) {
+    margin-top: -20px;
+  }
+
+  @media (min-width: $m-large) {
+    margin-top: -30px;
+  }
+
   .icon {
-    width: 37px;
-    height: 37px;
+    width: 30px;
+    height: 30px;
     color: var(--theme-base);
+
+    @media (min-width: $medium) {
+      width: 37px;
+      height: 37px;
+    }
   }
 }
 .glider-prev:hover,
