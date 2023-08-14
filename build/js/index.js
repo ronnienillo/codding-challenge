@@ -655,6 +655,7 @@ toggleCart.addEventListener('click', () => {
 const dataContainer = document.getElementById('data');
 const cartContainer = document.getElementById('js-cart-container');
 const quantityElement = document.getElementById('quantity');
+const cartQTY = document.getElementById('cartQTY');
 const totalPriceElement = document.getElementById('total-price');
 
 let totalQuantity = 0;
@@ -719,6 +720,11 @@ function addToCart(item) {
 function updateCartInfo() {
   quantityElement.textContent = totalQuantity;
   totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+
+  if(totalQuantity >= 1) {
+    cartQTY.textContent = totalQuantity;
+    cartQTY.classList.add('show');
+  }
 
   if (totalQuantity === 0) {
     cartContainer.innerHTML = '<p class="empty">Your cart is empty.</p>';

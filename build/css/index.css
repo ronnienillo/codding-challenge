@@ -3987,11 +3987,13 @@ h6, .h6 {
   }
 }
 nav {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
   background-color: var(--theme-base);
   z-index: 9;
+  top: 0;
 }
 nav ul li {
   list-style-type: none;
@@ -4064,6 +4066,30 @@ nav .site-header-options__cart.open {
   z-index: 1;
   opacity: 1;
   visibility: visible;
+}
+nav .site-header-options__cart-counter {
+  background-color: var(--accent-color);
+  color: var(--theme-base);
+  font-size: 1rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  right: 0;
+  font-family: var(--font-medium);
+  scale: 0;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+nav .site-header-options__cart-counter.show {
+  scale: 1;
+  opacity: 1;
 }
 nav .site-header-options__cart-container {
   overflow-y: auto;
