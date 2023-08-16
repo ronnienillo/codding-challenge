@@ -46,4 +46,17 @@ img {
     opacity: .75;
 }
 
+body:has(.no-js) {
+
+    > main {
+        .glider {
+            display: flex;
+
+            a {
+                width: 100%;
+                flex-shrink: 0;
+            }
+        }
+    }
+}
 

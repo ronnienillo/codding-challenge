@@ -15,6 +15,11 @@
     &--invert {
         background-color: var(--theme-base-invert);
         color: var(--theme-base);
+
+        &:hover {
+            background-color: var(--accent-shade);
+            color: var(--text-color-lighter);
+        }
     }
 
     &--rounded {

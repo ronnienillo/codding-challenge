@@ -132,7 +132,7 @@ function updateCartInfo() {
 fetch('http://localhost:3000/post')
   .then(res => res.json())
   .then(data => {
-    data.forEach(item => {
+    data.map(item => {
       const itemContainer = document.createElement('div');
       itemContainer.classList.add(
         'd-flex',
