@@ -7,7 +7,7 @@ npm install
 
 ```
 
-Secons, run the json-server to see the local data
+Second, run the json-server to see the local data
 
 ```bash
 npm start
