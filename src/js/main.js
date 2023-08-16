@@ -40,16 +40,30 @@ toggleButtonClose.addEventListener('click', () => {
 const toggleCart = document.getElementById('js-toggle-cart');
 const cartBox = document.getElementById('js-cart-box');
 
-toggleCart.addEventListener('click', () => {
+// Function to check if a click event occurred outside the cartBox
+function clickOutsideCartBox(event) {
+  if (!cartBox.contains(event.target) && !toggleCart.contains(event.target)) {
+    cartBox.classList.remove('open');
+    document.removeEventListener('click', clickOutsideCartBox);
+  }
+}
+
+toggleCart.addEventListener('click', (event) => {
+  event.stopPropagation(); // Prevent the click from triggering the document's click listener
   cartBox.classList.toggle('open');
+  
+  if (cartBox.classList.contains('open')) {
+    // Add a click event listener to the document to detect clicks outside the cartBox
+    document.addEventListener('click', clickOutsideCartBox);
+  } else {
+    // Remove the document click event listener when the cart is closed
+    document.removeEventListener('click', clickOutsideCartBox);
+  }
 });
 
 
-
-
-
-
 // fetching static data
+//initialize data group
 const dataContainer = document.getElementById('data');
 const cartContainer = document.getElementById('js-cart-container');
 const quantityElement = document.getElementById('quantity');
