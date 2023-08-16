@@ -684,7 +684,7 @@ function addToCart(item) {
     cartItem.innerHTML = `
     <div class="row">
       <div class="col-5">
-          <img src="${item.thumbnail}" alt="${item.thumbnail}" />
+          <img loading="lazy" src="${item.thumbnail}" alt="${item.thumbnail}" />
       </div>
       <div class="col-7">
           ${

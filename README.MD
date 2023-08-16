@@ -1,4 +1,5 @@
 ## Getting Started
+
 First, Intall dependencies
 
 ```bash
@@ -6,11 +7,10 @@ npm install
 
 ```
 
-
 Secons, run the json-server to see the local data
 
 ```bash
-json-server --watch data.json
+npm start
 
 ```
 
